@@ -12,7 +12,7 @@ router
     const result = db.Trip.create({
       name: req.body.name,
       notes: req.body.notes,
-      UserId: req.body.UserId
+      
     });
     res.redirect("/");
   });
