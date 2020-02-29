@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     notes: DataTypes.STRING(3500)
   });
 
- 
+
 
   return Trip;
 };
