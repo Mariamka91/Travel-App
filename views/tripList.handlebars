@@ -3,7 +3,6 @@ $(function() {
     var currentId = null;
 
     function saveEntry(id, bodyText) {
-        debugger;
         $.ajax({
             url: `http://localhost:8080/api/trips/${id}`,
             method: "POST",
@@ -23,12 +22,10 @@ $(function() {
        $('.modal').addClass("is-active");
        $('#entry-area').val(e.target.attributes["notes"].value);
        currentId = e.target.attributes["linkid"];
-        // console.log(e.target.attributes["linkid"]);
-        // e.preventDefault;
+        
     });
 
     $('.save').click((e) => {
-        debugger;
         saveEntry(currentId.value, $("#entry-area").val());
     });
 
@@ -77,11 +74,11 @@ $(function() {
             <footer class="card-footer">
                 <p class="card-footer-item">
                     <span>
-                        <a class="contribute-link" notes="{{this.dataValues.notes}}" linkid="{{this.dataValues.id}}">Contribute here!</a>
+                        <a class="contribute-link" notes="{{this.dataValues.notes}}" linkid="{{this.dataValues.id}}">Contribute Here!</a>
                     </span>
                 </p>
                 <p class="card-footer-item">
-                    <span> Share on <a href="#">Facebook</a> </span>
+                    <span><a href="https://www.yelp.com/search?find_desc=&find_loc={{this.dataValues.name}}">Search On Yelp!</a></span>
                 </p>
             </footer>
         </div>
