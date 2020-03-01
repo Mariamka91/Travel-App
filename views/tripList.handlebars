@@ -1,3 +1,56 @@
+<script>
+$(function() {
+    var currentId = null;
+
+    function saveEntry(id, bodyText) {
+        debugger;
+        $.ajax({
+            url: `http://localhost:8080/api/trips/${id}`,
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({ notes: bodyText })
+        }).done((data) => {
+            closeModal();
+            location.reload();
+        }).fail((data) => {
+            alert("Error");
+        });
+    }
+
+    function closeModal() { $('.modal').removeClass("is-active"); }
+
+   $('.contribute-link').click((e) => {
+       $('.modal').addClass("is-active");
+       $('#entry-area').val(e.target.attributes["notes"].value);
+       currentId = e.target.attributes["linkid"];
+        // console.log(e.target.attributes["linkid"]);
+        // e.preventDefault;
+    });
+
+    $('.save').click((e) => {
+        debugger;
+        saveEntry(currentId.value, $("#entry-area").val());
+    });
+
+     $('.cancel').click((e) => { closeModal(); });
+
+    $('.modal-close').click((e) => { closeModal(); });
+});
+ 
+</script>
+    <div class="modal">
+     <div class="modal-background"></div>
+      <div class="modal-content">
+    <div class="box">
+        <h1>Edit your trip details</h1> 
+        <textarea id="entry-area" class="textarea" placeholder="e.g. Hello world"></textarea>
+        <br />
+        <button class="button save">Save</button>
+        <button class="button is-danger cancel">Cancel</button>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
 <section class="section">
     <div class="container">
         <h1 class="title">Where in the world are you going?</h1>
@@ -7,7 +60,7 @@
         <div class="card">
             <div class="card-image">
                 <figure class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                <img src="https://source.unsplash.com/1280x960/?{{this.dataValues.name}}" alt="Placeholder image">
                 </figure>
             </div>
             <div class="card-content">
@@ -24,8 +77,7 @@
             <footer class="card-footer">
                 <p class="card-footer-item">
                     <span>
-                        View on
-                        <a href="/trips/{{this.dataValues.id}}">Contribute here!</a>
+                        <a class="contribute-link" notes="{{this.dataValues.notes}}" linkid="{{this.dataValues.id}}">Contribute here!</a>
                     </span>
                 </p>
                 <p class="card-footer-item">
