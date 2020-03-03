@@ -39,7 +39,12 @@ app.get("/sign-up", (req, res) => {
 app.get("/", (req, res) => {
   res.render("index");
 });
-
+app.get("/admin", async (req, res) => {
+  const trips = await db.Trip.findAll();
+  res.render("admin", {
+    trips: trips
+  });
+});
 app.get("/add-trips", (req, res) => {
   res.render("trips");
 });
