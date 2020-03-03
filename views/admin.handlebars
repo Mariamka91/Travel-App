@@ -9,7 +9,7 @@
 
         }
 
-        $("#delete").click((e) => {
+        $(".destroy").click((e) => {
             var id = e.target.attributes["linkId"].value;
             var url = "http://localhost:8080/api/trips/";
             deleteTrip(id, url);
@@ -38,7 +38,7 @@
             </div>
             <footer class="card-footer">
                 <p class="card-footer-item">
-                    <button id="delete" linkId="{{this.dataValues.id}}">Delete Trip</button>
+                    <button id="delete" class="destroy" linkId="{{this.dataValues.id}}">Delete Trip</button>
                 </p>
             </footer>
         </div>
