@@ -4,8 +4,15 @@
 
 body {
   background-image: url("../images/plane_40.png");
-  font-family: "Prompt", Helvetica, Arial, sans-serif;
+  /* font-family: "Racing Sans One"; */
+
+  overflow-y: scroll;
 }
+/* font-family: "Prompt", Helvetica, Arial, sans-serif; */
+/* font-family: "Sigmar One"; */
+/* font-family: "Carter One"; */
+/* font-family: "Faster One"; */
+/* font-family: "Wendy One"; */
 
 .sidebar {
   background: #fff;
@@ -69,10 +76,31 @@ h5 {
 }
 
 .main-container {
-  background-color: #fff;
+  /* background-color: #eeeeee; */
+
+  background-image: url("../images/plane_20.png");
+  max-height: 500px;
   padding: 30px;
-  border: 1px solid #ddd;
+  border: 1px solid #eeeeee;
+  overflow-y: scroll;
+  height: 900px;
+  width: 1000px;
+
 }
+
+.title {
+  padding-top: 40px;
+  /* color: #444444; */
+  /* font-family: "Wendy One"; */
+  font-family: "Faster One";
+}
+
+/* .spec-font { */
+/* font-family: "Racing Sans One"; */
+
+/* font-family: "Carter One"; */
+/* font-family: "Wendy One"; */
+/* } */
 
 .social {
   width: 20px;
@@ -112,13 +140,17 @@ h5 {
       overflow-y: scroll;
     } */
 
-#main-container {
+/* #main-container {
+
   max-height: 500px;
   max-width: 850px;
-  overflow-y: scroll;
 
-  /* max-height: 365px; */
-}
+  overflow-y: scroll;
+} */
+
+  max-height: 365px;
+} */
+
 
 /* #carousel {
   max-height: 800px; */
@@ -132,9 +164,9 @@ h5 {
   background-color: #dddddd;
 }
 
-/* .navbar-item img:hover {
-  transform: scale(1.25);
-} */
+.navbar-item:hover {
+  transform: scale(1.1);
+}
 
 .buttons {
   margin-right: 40px;
@@ -150,7 +182,15 @@ h5 {
 #globe img:hover {
   transform: scale(1.25); */
 
-#logo img:hover {
+#logo:hover {
+  transform: scale(1.25);
+}
+
+#globe:hover {
+  transform: scale(1.25);
+}
+
+#button:hover {
   transform: scale(1.25);
 }
 
@@ -201,12 +241,14 @@ h5 {
   cursor: pointer;
 }
 
+
 #button {
-  margin-left: 68px;
+  margin-left: 143px;
   margin-top: 20px;
-  width: 100px;
-  padding: 15px;
-  background-color: lightcyan;
+  width: 80px;
+  height: 35px;
+  padding: 10px;
+  background-color: palegoldenrod;
   border: solid 2px lightgrey;
   cursor: pointer;
 }
@@ -222,9 +264,10 @@ h5 {
 
 #message {
   height: 150px;
-  width: 620px;
+  width: 580px;
   cursor: pointer;
   border: solid 1px lightgrey;
+  margin-top: 5px;
 }
 
 #name {
@@ -246,13 +289,48 @@ h5 {
 }
 
 #destination {
-  margin-right: 20px;
+
+  margin-right: 46px;
+  margin-bottom: 10px;
 }
+
+#button {
+  margin-left: 143px;
+  margin-top: 20px;
+  width: 80px;
+  height: 35px;
+  padding: 10px;
+  background-color: palegoldenrod;
+  border: solid 2px lightgrey;
+  cursor: pointer;
+}
+
+.subtitle {
+  font: xxx-large;
+  color: darkcyan;
+
+}
+
+/* final card content style */
+
+.card-content {
+  /* font-family: "Wendy One"; */
+  /* font-family: "Racing Sans One"; */
+  /* font-family: "Titillium Web"; */
+  font-family: "Quicksand";
+}
+.card-footer-item {
+  font-family: "Quicksand";
+  font-size: small;
+}
+
+/* #title {
+  font-family: "Faster One";
+} */
 
 /* sign-in form */
 
 #check-in-button {
-  /* padding: 10px; */
   background-color: lightcyan;
   border: solid 2px lightgrey;
   cursor: pointer;
@@ -273,8 +351,6 @@ h5 {
 }
 
 #email {
-  /* height: 30px;
-  width: 100px; */
   height: 25px;
   margin-top: 30px;
   margin-bottom: 10px;
